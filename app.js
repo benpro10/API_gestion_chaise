@@ -1,6 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 const connection = require("./config/db");
+const workerRouter = require("./routes/worker");
 
 const app = express();
 const port = process.env.PORT;
@@ -20,6 +21,8 @@ app.get("/", async (req, res, next) => {
     return res.status(500).json({ error: "ERRUR DE SERVEUR" });
   }
 });
+
+app.use("/", workerRouter);
 
 app.listen(port, () => {
   console.log(`My server is running on http://localhost:${port}`);

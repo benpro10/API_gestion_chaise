@@ -6,7 +6,7 @@ const workerSchema = mongoose.Schema({
     required: true,
   },
   prenom: String,
-  sexe: Boolean,
+  sexe: String,
 });
 
 module.exports = mongoose.model("user", workerSchema);
