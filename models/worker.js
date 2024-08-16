@@ -9,4 +9,4 @@ const workerSchema = mongoose.Schema({
   sexe: String,
 });
 
-module.exports = mongoose.model("user", workerSchema);
+module.exports = mongoose.model("Worker", workerSchema);

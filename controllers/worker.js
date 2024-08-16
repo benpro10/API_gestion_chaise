@@ -7,7 +7,7 @@ exports.createWorker = async (req, res, next) => {
     if (oldWorker) {
       return res
         .status(409)
-        .json("ce Client existe déjà dans notre base donnée");
+        .json("cet ouvrier existe déjà dans notre base donnée");
     } else {
       const newWorker = await Worker.create({
         nom: nom,

@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
 const chairSchema = mongoose.Schema({
-  nom: {
-    type: String,
-    required: true,
-  },
   couleur: {
     type: String,
     required: true,
@@ -19,8 +15,8 @@ const chairSchema = mongoose.Schema({
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "worker",
+    ref: "Worker",
   },
 });
 
-module.exports = mongoose.model("chair", chairSchema);
+module.exports = mongoose.model("Chair", chairSchema);

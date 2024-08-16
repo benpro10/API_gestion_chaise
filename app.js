@@ -2,6 +2,7 @@ const express = require("express");
 require("dotenv").config();
 const connection = require("./config/db");
 const workerRouter = require("./routes/worker");
+const ChairRouter = require("./routes/chair");
 
 const app = express();
 const port = process.env.PORT;
@@ -23,6 +24,7 @@ app.get("/", async (req, res, next) => {
 });
 
 app.use("/", workerRouter);
+app.use("/", ChairRouter);
 
 app.listen(port, () => {
   console.log(`My server is running on http://localhost:${port}`);
